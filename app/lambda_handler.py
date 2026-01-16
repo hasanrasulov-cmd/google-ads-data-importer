@@ -28,15 +28,15 @@ def process():
             # "api_url": "https://api.example.com",
             # etc.
         }
-        
+
         importer = IntakerImporter(config=config)
-        
+        print(importer)
         # Run the import process
         result = importer.run()
-        
+
         logger.info(f"Import process completed: {result}")
         return result
-        
+
     except Exception as e:
         logger.error(f"Error in process function: {str(e)}", exc_info=True)
         raise
@@ -62,11 +62,11 @@ def lambda_handler(event, context):
     """
     logger.info("Lambda function invoked")
     logger.info(f"Event: {event}")
-    
+
     try:
         # Run the import process
         result = process()
-        
+
         return {
             "statusCode": 200,
             "body": {
@@ -74,7 +74,7 @@ def lambda_handler(event, context):
                 "result": result
             }
         }
-        
+
     except Exception as e:
         logger.error(f"Lambda handler error: {str(e)}", exc_info=True)
         return {
@@ -84,5 +84,3 @@ def lambda_handler(event, context):
                 "error": str(e)
             }
         }
-
-
