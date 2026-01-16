@@ -1,0 +1,17 @@
+# NOTE: Variables set in here will activate only in a production environment
+# export EXAMPLE_VAR="Hello from production"
+
+####################################################################################################
+# API Gateway Settings
+# * You only need these if you are triggering your lambda function from API Gateway
+# * NOTE: The root domain MUST already exist in Route53 in your AWS account for this to work
+####################################################################################################
+export API_ROOT_DOMAIN=mydomain.com
+export API_DOMAIN=api.mydomain.com
+
+
+export DB_HOST=shared-infra-prod-instance-1.cpqeg8oeyye4.us-east-2.rds.amazonaws.com
+export DB_NAME=dmlaw
+export DB_PASSWORD=${PG_PASSWORD_PROD}
+export DB_USER=dbadmin
+
