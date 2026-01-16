@@ -63,6 +63,7 @@ jobs:
         with:
           role-to-assume: ${{ steps.config.outputs.aws-role-arn }}
           aws-region: ${{ steps.config.outputs.aws-region }}
+          audience: sts.amazonaws.com
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
@@ -104,6 +105,7 @@ jobs:
         with:
           role-to-assume: ${{ steps.config.outputs.aws-role-arn }}
           aws-region: ${{ steps.config.outputs.aws-region }}
+          audience: sts.amazonaws.com
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
@@ -142,6 +144,7 @@ jobs:
         with:
           role-to-assume: ${{ steps.config.outputs.aws-role-arn }}
           aws-region: ${{ steps.config.outputs.aws-region }}
+          audience: sts.amazonaws.com
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
@@ -180,6 +183,7 @@ jobs:
         with:
           role-to-assume: ${{ steps.config.outputs.aws-role-arn }}
           aws-region: ${{ steps.config.outputs.aws-region }}
+          audience: sts.amazonaws.com
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
